@@ -1,0 +1,21 @@
+.header-nav {
+    margin-bottom: 86px;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    gap: 20px;
+}
+
+.nav__logo {
+    align-self: center;
+}
+
+.nav__btn {
+    display: none;
+
+    @include tablet() {
+        display: block;
+    }
+}

@@ -1,0 +1,60 @@
+.nav-list {
+    align-self: center;
+    justify-self: center;
+
+    font-weight: 500;
+    font-size: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+
+    @include tablet() {
+        display: none;
+    }
+}
+
+.nav-list__item {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.nav-list__link {
+    transition: opacity .2s ease-in;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    &--submenu {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::after {
+            content: url('./../../img/vertors/arrow-down.svg');
+            height: 18px;
+        }
+    }
+}
+
+.nav-list__sub-nav {
+    opacity: 0;
+    width: 98px;
+    pointer-events: none;
+
+    position: absolute;
+    left: 45%;
+    top: 100%;
+
+    transform: translate(0%, 50%);
+    transition: all .2s ease-in;
+}
+
+.nav-list__item:hover .nav-list__sub-nav {
+    pointer-events: all;
+    display: block;
+    opacity: 1;
+    transform: translate(0%, 0%);
+}

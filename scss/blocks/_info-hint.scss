@@ -1,0 +1,53 @@
+.info-hint {
+    position: absolute;
+    top: -26px;
+    left: 50%;
+    transform: translate(-50%, -100%);
+
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    padding-top: 12px;
+    width: 112px;
+    height: 56px;
+    background-image: url(./../../img/vertors/tooltip.svg);
+}
+
+.info-hint__radio {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.info-hint__radio:checked+.info-hint__radio-fake {
+    background-image: url(./../../img/vertors/check.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+
+.info-hint__radio-fake {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background-color: var(--text-muted);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+
+    &--orange {
+        background-color: var(--ui-orange);
+    }
+
+    &--birusa {
+        background-color: var(--ui-birusa);
+    }
+
+    &--gray {
+        background-color: var(--ui-gray);
+    }
+}
